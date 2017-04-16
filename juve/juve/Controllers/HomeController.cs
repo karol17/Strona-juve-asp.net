@@ -10,13 +10,14 @@ namespace juve.Controllers
 {
     public class HomeController : Controller
     {
+        DataContext db = new DataContext();
        
         // GET: Home
         public ActionResult Index()
         {
             
 
-            return View();
+            return View(db.News.ToList());
         }
     }
 }

@@ -1,0 +1,12 @@
+﻿@model IEnumerable<juve.Models.News>
+@{
+    ViewBag.Title = "Juventus Turyn";
+}
+
+@foreach(var item in Model)
+{
+    <h1>@item.Title</h1>
+    <p>@item.Header</p>
+
+}
+
