@@ -3,6 +3,7 @@ using juve.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
@@ -18,6 +19,20 @@ namespace juve.Controllers
             
 
             return View(db.News.ToList());
+        }
+        public ActionResult FullArticle(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            News news = db.News.Find(id);
+            if (news == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(news);
         }
     }
 }
