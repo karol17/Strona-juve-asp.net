@@ -1,0 +1,12 @@
+﻿@model IEnumerable<juve.Models.Player>
+@{
+    ViewBag.Title = "Skład";
+}
+
+<div style="margin-top:20px">
+    @foreach (var item in Model)
+    {
+        <div id="PlayerList">@Html.ActionLink(item.FirstName + " " + item.LastName, "Player", new { id = item.PlayerId })</div>
+    }
+
+</div>

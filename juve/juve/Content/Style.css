@@ -1,7 +1,7 @@
 ﻿
 body {
-    background-color:#505050;
-    color:#ffffff;
+    background-color:#ffffff;
+    color:#000000;
     margin:0;
 
 }
@@ -48,7 +48,7 @@ ol{
     display:inline-block;
 }
 ol a{
-    color:#ffffff;
+    color:#000000;
     text-decoration:none;
     display:block;
 }
@@ -90,4 +90,10 @@ ol > li:hover > ul{
 }
 ol > li > ul > li:hover > a{
     ol > li > ul > li:hover
+}
+
+#PlayerList{
+    text-align:center;
+    text-decoration:none;
+    
 }

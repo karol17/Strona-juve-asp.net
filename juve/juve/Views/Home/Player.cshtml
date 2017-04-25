@@ -1,0 +1,29 @@
+﻿@model juve.Models.Player
+@{
+    ViewBag.Title = "Player";
+}
+
+<div>
+    <h1>@Model.FirstName @Model.LastName</h1>
+    <table>
+        <tr>
+            <td>Numer:</td>
+            <td>@Model.Number</td>
+        </tr>
+        <tr>
+            <td>Pozycja:</td>
+            <td>@Model.Position</td>
+        </tr>
+        <tr>
+            <td>Data urodzenia:</td>
+            <td>@Model.BirthDay</td>
+        </tr>
+        <tr>
+            <td>Bramki:</td>
+            <td>@Model.GoalCount</td>
+        </tr>
+    </table>
+    @Html.ActionLink("Powrót","Squad")
+
+</div>
+

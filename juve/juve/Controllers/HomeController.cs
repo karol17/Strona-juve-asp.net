@@ -34,5 +34,22 @@ namespace juve.Controllers
 
             return View(news);
         }
+        public ActionResult Squad()
+        {
+            return View(db.Player.ToList());
+        }
+        public ActionResult Player(int ?id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Player player = db.Player.Find(id);
+            if (player == null)
+            {
+                return HttpNotFound();
+            }
+            return View(player);
+        }
     }
 }
