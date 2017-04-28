@@ -104,6 +104,10 @@
     <Content Include="Content\Style.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Prototype\css\reset.css" />
+    <Content Include="Prototype\css\style.css" />
+    <Content Include="Prototype\index.html" />
+    <Content Include="Prototype\scripts\scripts.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
