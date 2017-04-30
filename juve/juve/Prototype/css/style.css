@@ -9,11 +9,7 @@
     max-width:1100px;
     margin:0 auto;
 }
-.floatfix:after{
-    content:'';
-    display:block;
-    clear:both;
-}
+
 header h1{
     float:left;
     width:35%;
@@ -24,14 +20,14 @@ header h1 a{
     display:block;
     width:200px;
     height:60px;
-    margin:5px auto;
+    margin:5px 0;
     text-indent:-999em;
     
     background:url('../../Content/Images/banner.jpg') top left no-repeat;
 }
 
 header nav{
-    float:left;
+    float:right;
     width:65%;
 }
 header nav ul, header nav ul.visible{
@@ -56,6 +52,41 @@ header nav li a:hover{
     background:#000;
     color:#fff;
 }
+.floatfix:after{
+    content:'';
+    display:block;
+    clear:both;
+}
+
+.slogan-bg{
+    height:442px;
+    width:100%;
+    background:url('../../Content/Images/slogan-bg.jpg') top center no-repeat;
+    background-size:cover;
+    overflow:hidden;
+    border-top:4px solid #000;
+    border-bottom:4px solid #000;
+}
+.slogan{
+    text-align:center;
+    padding-top:180px;
+    font-family:Impact, sans-serif;
+    font-size:3.5em;
+    line-height:1.5em;
+}
+.slogan h1{
+    color:#393b38;
+    display:inline;
+    padding:5px 15px;
+    background:rgba(255,255,255,0.8);
+
+}
+.slogan h2{
+    color:#fff;
+    display:inline;
+    padding:5px 15px;
+    background:rgba(0,0,0,0.8);
+}
 
 /*------------------MENU SWITCH------------------*/
 .switch{
@@ -72,6 +103,12 @@ header nav li a:hover{
 @media screen and (max-width: 1024px) {
     .contener{
         width:90%;
+    }
+    .slogan-bg{
+        height:400px;
+    }
+    .slogan{
+        padding-top:150px;
     }
 }
 
@@ -95,6 +132,17 @@ header nav li a:hover{
     header nav ul{
         display:none;
     }
+    .slogan-bg{
+        height:300px;
+    }
+    .slogan{
+        padding-top:100px;
+        font-size:3em;
+        
+    }
+    .slogan h1, .slogan h2{
+        padding:5px 0px;
+    }
 }
 
 /*------------------MAX-WIDTH 480------------------*/
@@ -109,11 +157,19 @@ header nav li a:hover{
     }
     header nav ul li a{
         height:40px;
-        line-height:50px;
+        line-height:40px;
         border-bottom:1px solid #000;
     }
     header nav ul.visible{
         display:block;
+    }
+    .slogan-bg{
+        height:200px;
+    }
+    .slogan{
+        padding-top:60px;
+        font-size:2em;
+        line-height:1.7em;
     }
 }
 
