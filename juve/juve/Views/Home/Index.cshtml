@@ -5,13 +5,18 @@
 
 @foreach (var item in Model)
 {
-    <div>
-        <h1>@item.Title</h1>
-        <p>@item.Header</p>
-        <span>@Html.ActionLink("Więcej","FullArticle",new { id = item.NewsId })</span>
-        <hr />
-    </div>
+    <section class="news floatfix">
+        
+        
 
-    
+        <img src="~/Content/Images/juve-logo.gif" />
+        <h1>@item.Title</h1>
+        <p>
+            @item.Header
+            <span>@Html.ActionLink("Więcej", "FullArticle", new { id = item.NewsId })</span>
+        </p>
+    </section>
+
+
 }
 

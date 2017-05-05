@@ -99,15 +99,21 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\banner.jpg" />
     <Content Include="Content\Images\juve-logo.gif" />
+    <Content Include="Content\Images\obrazek.jpg" />
+    <Content Include="Content\Images\slogan-bg.jpg" />
+    <Content Include="Content\Images\slogan-bg1.jpg" />
+    <Content Include="Content\Images\slogan-bg2.jpg" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\Style.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Content\reset.css" />
     <Content Include="Prototype\css\reset.css" />
     <Content Include="Prototype\css\style.css" />
     <Content Include="Prototype\index.html" />
-    <Content Include="Prototype\scripts\scripts.js" />
+    <Content Include="Scripts\scripts.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
@@ -148,6 +154,8 @@
     <Content Include="Views\Home\Player.cshtml" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.1.min.map" />
+    <Content Include="Views\Home\Historia.cshtml" />
+    <Content Include="Views\Home\Kontakt.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -157,6 +165,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Prototype\scripts\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

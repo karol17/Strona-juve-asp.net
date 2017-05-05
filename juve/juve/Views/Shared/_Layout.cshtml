@@ -1,69 +1,47 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>Juventus Turyn</title>
+    <title>Fc Juventus Turyn</title>
     <meta charset="utf-8" />
+    <meta name="description" content="Strona internetowa fanów klubu piłkarskiego Juventus Turyn" />
+    <meta name="keywords" content="Juventus Turyn,piłka nożna,serieA,juve" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link href=@Url.Content("~/Content/Style.css") rel="stylesheet" />
-   
 
-    
+    <link href="~/Content/reset.css" rel="stylesheet" />
+    <link href="~/Content/Style.css" rel="stylesheet" />
 </head>
 <body>
-    <div class="wrapper">
 
-        <header>
-            <div class="logo">
-
-                <img src="~/Content/Images/juve-logo.gif" width="55" height="55" style="float:left" />
-                <span style="color:#000000;"> Juventus</span> Turyn
-                <div style="clear:both;"></div>
-            </div>
-        </header>
+    <header class="contener floatfix">
+        <h1><a href="index.html">Juventus Turyn</a></h1>
         <nav>
-            <ol>
-                <li><a href="#">Strona główna</a></li>
-                <li>
-                    <a href="#">Klub</a>
-                    <ul>
-                        <li>@Html.ActionLink("Skład","Squad")</li>
-                        <li><a href="#"></a>Historia</li>
-                        <li><a href="#"></a>Trofea</li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">Terminarz</a>
-                    <ul>
-                        <li> <a href="#"></a>Cacio A</li>
-                        <li><a href="#"></a>Puchar Włoch</li>
-                        <li> <a href="#"></a>Liga Mistrzów</li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">Galeria</a>
-                    <ul>
-                        <li> <a href="#"></a>Sezon 2016/2017</li>
-                        <li><a href="#"></a>Sezon 2015/2016</li>
-                        <li> <a href="#"></a>Sezon 2014/2015</li>
-                    </ul>
-                </li>
-
-                <li><a href="#">Sklep</a></li>
-                <li><a href="#">Kontakt</a></li>
-            </ol>
-
+            <a href="#" class="switch">MENU</a>
+            <ul class="menu">
+                <li><a href="index.html">Strona główna</a></li>
+                <li><a href="#">Drużyna</a></li>
+                <li><a href="@Url.Action("StronyStatyczne","Home",new { nazwa = "Historia" })">Historia</a></li>
+                <li><a href="@Url.Action("StronyStatyczne","Home",new { nazwa = "Kontakt" })">Kontakt</a></li>
+            </ul>
         </nav>
-        <article>
-            <section>
-                @RenderBody()
+    </header>
+    <div class="slogan-bg">
 
-
-            </section>
-        </article>
-        <footer>
-            &copy;@DateTime.Now.Year My ASP.NET Aplication
-        </footer>
+        <div class="slogan">
+            <h1>FC JUVENTUS TURYN</h1>
+            <br />
+            <h2>BIANCONERI</h2>
+        </div>
     </div>
 
+    @RenderBody()
+
+
+    <script src="../Scripts/jquery-3.1.1.min.js"></script>
+    <script src="~/Scripts/scripts.js"></script>
+    <footer>
+        &copy Copyright Karol Mazur @DateTime.Now.Year
+    </footer>
 </body>
 </html>
+

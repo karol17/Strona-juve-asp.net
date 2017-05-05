@@ -34,6 +34,10 @@ namespace juve.Controllers
 
             return View(news);
         }
+        public ActionResult StronyStatyczne(string nazwa)
+        {
+            return View(nazwa);
+        }
         public ActionResult Squad()
         {
             return View(db.Player.ToList());

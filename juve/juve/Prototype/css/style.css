@@ -99,6 +99,14 @@ header nav li a:hover{
     text-decoration:none;
 }
 
+footer{
+    
+    background-color:#000;
+    color:#fff;
+    text-align:center;
+    font-size:1.5em;
+
+}
 /*------------------MAX-WIDTH 1024------------------*/
 @media screen and (max-width: 1024px) {
     .contener{

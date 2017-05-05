@@ -20,9 +20,9 @@ namespace juve.Models
     }
     public enum Position
     {
-        GoalKeaper,
-        Defender,
-        Midfielder,
-        Attacker
+        Bramkarz,
+        Obrońca,
+        Pomocnik,
+        Napastnik
     }
 }
