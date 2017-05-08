@@ -105,6 +105,7 @@
     <Content Include="Content\Images\slogan-bg.jpg" />
     <Content Include="Content\Images\slogan-bg1.jpg" />
     <Content Include="Content\Images\slogan-bg2.jpg" />
+    <Content Include="Content\Images\tabela.png" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\Style.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />

@@ -99,6 +99,13 @@ header nav li a:hover{
     text-decoration:none;
 }
 
+aside{
+    float:left;
+    margin:10px;
+}
+section{
+    margin:10px;
+}
 footer{
     
     background-color:#000;

@@ -2,21 +2,23 @@
 @{
     ViewBag.Title = "Juventus Turyn";
 }
-
-@foreach (var item in Model)
-{
-    <section class="news floatfix">
-        
-        
-
-        <img src="~/Content/Images/juve-logo.gif" />
-        <h1>@item.Title</h1>
-        <p>
-            @item.Header
-            <span>@Html.ActionLink("Więcej", "FullArticle", new { id = item.NewsId })</span>
-        </p>
-    </section>
+<section class="news floatfix ">
+    @foreach (var item in Model)
+    {
 
 
-}
+
+        <articel>
+            <img src="~/Content/Images/juve-logo.gif" />
+            <h1>@item.Title</h1>
+            <p>
+                @item.Header
+                <span>@Html.ActionLink("Więcej", "FullArticle", new { id = item.NewsId })</span>
+            </p>
+        </articel>
+    }
+</section>
+
+
+   
 
