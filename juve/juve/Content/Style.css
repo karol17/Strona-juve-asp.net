@@ -98,13 +98,19 @@ header nav li a:hover{
     font-size:1.4em;
     text-decoration:none;
 }
-aside.table{
+
+
+
+
+aside{
+    width:26%;
     float:left;
-    margin:15px;
-    padding:5px;
+    margin:2%;
 }
-.news{
-    margin:15px;
+section.news{
+    width:66%;
+    float:right;
+    margin:2%;
 }
 section.news h1{
     font-size:2em;
@@ -112,8 +118,10 @@ section.news h1{
 }
 
 section.news p{
-    font-size:1.5em;
+    font-size:1.4em;
     margin-top:10px;
+    margin-bottom:2%;
+    
     
 }
 section.news p a{
@@ -130,6 +138,14 @@ section.news a:hover{
     float:left;
     border:4px solid #000;
     margin:0 2% 0 0;
+
+}
+.squad-list{
+    width:66%;
+    display:block;
+    float:right;
+    text-align:center;
+    margin:2%;
 }
 .squad-list img, .player img{
     float:left;
@@ -140,16 +156,15 @@ section.news a:hover{
     font-size:2em;
     text-transform:uppercase;
     text-align:left;
+    
 }
-.squad-list{
-    margin-top:10px;
-    text-align:center;
-}
+
 .squad-list a{
     font-size:1.7em;
     text-decoration:none;
     color:#000;
-    display:block;
+    
+
 
 }
 .squad-list a:hover{

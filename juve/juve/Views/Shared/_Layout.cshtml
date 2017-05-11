@@ -8,8 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 
-    <link href="~/Content/reset.css" rel="stylesheet" />
-    <link href="~/Content/Style.css" rel="stylesheet" />
+    @*<link href="~/Content/reset.css" rel="stylesheet" />
+
+    <link href="~/Content/Style.css" rel="stylesheet" />*@
+   @Styles.Render("~/Content/css")
 </head>
 <body>
 
@@ -18,7 +20,7 @@
         <nav>
             <a href="#" class="switch">MENU</a>
             <ul class="menu">
-                <li><a href="index.html">Strona główna</a></li>
+                <li><a href="@Url.Action("Index","Home")">Strona główna</a></li>
                 <li><a href="#">Drużyna</a></li>
                 <li><a href="@Url.Action("StronyStatyczne","Home",new { nazwa = "Historia" })">Historia</a></li>
                 <li><a href="@Url.Action("StronyStatyczne","Home",new { nazwa = "Kontakt" })">Kontakt</a></li>
@@ -33,13 +35,15 @@
             <h2>BIANCONERI</h2>
         </div>
     </div>
-    <aside class="table">
-        <img src="~/Content/Images/tabela.png" />
-    </aside>
+    <div class="contener floatfix">
+        <aside class="table">
+            <img src="~/Content/Images/tabela.png" />
+        </aside>
+        
+            @RenderBody()
 
-    @RenderBody()
-
-
+        
+    </div>
     <script src="../Scripts/jquery-3.1.1.min.js"></script>
     <script src="~/Scripts/scripts.js"></script>
     <footer>

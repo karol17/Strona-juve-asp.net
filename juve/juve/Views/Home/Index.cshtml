@@ -2,7 +2,8 @@
 @{
     ViewBag.Title = "Juventus Turyn";
 }
-<section class="news floatfix ">
+
+<section class="news  ">
     @foreach (var item in Model)
     {
 
@@ -16,8 +17,10 @@
                 <span>@Html.ActionLink("Więcej", "FullArticle", new { id = item.NewsId })</span>
             </p>
         </articel>
+
     }
 </section>
+
 
 
    
