@@ -9,6 +9,6 @@ namespace juve.Models
     {
         public int ComentId { get; set; }
         public string Text { get; set; }
-        public User User { get; set; }
+        
     }
 }
