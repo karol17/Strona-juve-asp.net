@@ -11,7 +11,7 @@ namespace juve.Models
 {
     public class ApplicationUser : IdentityUser
     {
-        public virtual ICollection<Coment> Coments { get; set; }
+      
         public DaneUzytkownika DaneUzytkownika { get; set; }
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
