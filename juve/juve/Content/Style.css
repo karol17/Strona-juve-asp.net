@@ -142,7 +142,6 @@ section.news a:hover{
 }
 .squad-list{
     width:66%;
-    display:block;
     float:right;
     text-align:center;
     margin:2%;
@@ -162,6 +161,7 @@ section.news a:hover{
 .squad-list a{
     font-size:1.7em;
     text-decoration:none;
+    text-align:center;
     color:#000;
     
 
