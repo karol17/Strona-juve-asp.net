@@ -165,6 +165,7 @@
     <Content Include="Prototype\css\reset.css" />
     <Content Include="Prototype\css\style.css" />
     <Content Include="Prototype\index.html" />
+<<<<<<< HEAD
     <Content Include="Scripts\scripts.js" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
@@ -172,12 +173,18 @@
     <Content Include="Scripts\jquery-3.1.1.slim.js" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
 =======
+=======
+    <Content Include="Prototype\scripts\scripts.js" />
+>>>>>>> parent of 8ecd0b4... dokończenie layout
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
+<<<<<<< HEAD
 >>>>>>> parent of 4083f0d... Dodanie nowego layoutu
+=======
+>>>>>>> parent of 8ecd0b4... dokończenie layout
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -213,15 +220,25 @@
     <Content Include="packages.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+<<<<<<< HEAD
+=======
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+>>>>>>> parent of 8ecd0b4... dokończenie layout
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\FullArticle.cshtml" />
     <Content Include="Views\Home\Squad.cshtml" />
     <Content Include="Views\Home\Player.cshtml" />
+<<<<<<< HEAD
     <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.1.min.map" />
     <Content Include="Views\Home\Historia.cshtml" />
     <Content Include="Views\Home\Kontakt.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+=======
+>>>>>>> parent of 8ecd0b4... dokończenie layout
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
