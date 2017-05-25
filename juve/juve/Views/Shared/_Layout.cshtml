@@ -21,7 +21,7 @@
             <a href="#" class="switch">MENU</a>
             <ul class="menu">
                 <li><a href="@Url.Action("Index","Home")">Strona główna</a></li>
-                <li><a href="#">Drużyna</a></li>
+                <li><a href="@Url.Action("Squad","Home")">Drużyna</a></li>
                 <li><a href="@Url.Action("StronyStatyczne","Home",new { nazwa = "Historia" })">Historia</a></li>
                 <li><a href="@Url.Action("StronyStatyczne","Home",new { nazwa = "Kontakt" })">Kontakt</a></li>
             </ul>
@@ -37,12 +37,9 @@
     </div>
     <div class="contener floatfix">
         <aside class="table">
-            <div>
-                @Html.ActionLink("Zaloguj", "Login", "Account")
-            </div>
-            <div>
-                @Html.ActionLink("Zarejestruj", "Register", "Account")
-            </div>
+           <div>
+               @Html.Partial("_LoginPartial")
+           </div>
             <img src="~/Content/Images/tabela.png" />
         </aside>
         
