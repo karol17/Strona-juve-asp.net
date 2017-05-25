@@ -10,7 +10,7 @@ namespace juve.DAL
 {
     public class DataContext: IdentityDbContext<IdentityModels.ApplicationUser>
     {
-       public DataContext():base("DatsContext")
+       public DataContext():base("DataContext")
         {
             
         }
@@ -24,7 +24,7 @@ namespace juve.DAL
         }
         public DbSet<Player> Player { get; set; }
         public DbSet<News> News { get; set; }
-        public DbSet<Coment> Coment { get; set; }
+       // public DbSet<Coment> Coment { get; set; }
         //public DbSet<User> User { get; set; }
     }
 }
