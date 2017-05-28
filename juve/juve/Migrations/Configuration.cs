@@ -1,5 +1,6 @@
 namespace juve.Migrations
 {
+    using DAL;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -15,6 +16,7 @@ namespace juve.Migrations
 
         protected override void Seed(juve.DAL.DataContext context)
         {
+            JuveInitializer.SeedData(context);
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 

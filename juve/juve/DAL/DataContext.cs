@@ -14,6 +14,10 @@ namespace juve.DAL
         {
             
         }
+        //static DataContext()
+        //{
+        //    Database.SetInitializer<DataContext>(new JuveInitializer());
+        //}    
         public static DataContext Create()
         {
             return new DataContext();
@@ -22,8 +26,8 @@ namespace juve.DAL
         {
             base.OnModelCreating(modelBuilder);
         }
-        public DbSet<Player> Player { get; set; }
-        public DbSet<News> News { get; set; }
+        public virtual DbSet<Player> Player { get; set; }
+        public virtual DbSet<News> News { get; set; }
        // public DbSet<Coment> Coment { get; set; }
         //public DbSet<User> User { get; set; }
     }
