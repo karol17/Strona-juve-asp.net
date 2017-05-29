@@ -1,4 +1,5 @@
 ﻿@model juve.Models.News
+@*@model juve.Models.Coment*@
 @{
     ViewBag.Title = Model.Title;
 }
@@ -16,5 +17,22 @@
     <h1>@Model.Title</h1>
     <p>@Model.Text</p>
    
+    @Html.Partial("_AddComentPartial")
+
+    <article>
+        @foreach (var item in Model.Coments)
+        {
+            <div>
+                <div>
+                    @item.User.Email
+                </div>
+                <div>
+                    @item.Text
+                </div>
+
+            </div>
+        }
+    </article>
+
 
 </section>
