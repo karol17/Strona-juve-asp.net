@@ -23,7 +23,7 @@ namespace juve.Migrations
                 .Index(t => t.News_NewsId);
             
         }
-        
+
         public override void Down()
         {
             DropForeignKey("dbo.Coments", "News_NewsId", "dbo.News");

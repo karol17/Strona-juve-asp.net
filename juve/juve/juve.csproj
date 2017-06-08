@@ -150,6 +150,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\juve.mdf" />
+    <Content Include="App_Data\juve_log.ldf">
+      <DependentUpon>juve.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\Images\banner.jpg" />
     <Content Include="Content\Images\juve-logo.gif" />
     <Content Include="Content\Images\obrazek.jpg" />
@@ -182,7 +186,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\ComentController.cs" />
+    <Compile Include="Controllers\CommentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="DAL\DataContext.cs" />
     <Compile Include="DAL\JuveInitializer.cs" />
@@ -205,8 +209,16 @@
     <Compile Include="Migrations\201705291102483_DodanieComent.Designer.cs">
       <DependentUpon>201705291102483_DodanieComent.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706041306347_PowiazanieNewsZComent.cs" />
+    <Compile Include="Migrations\201706041306347_PowiazanieNewsZComent.Designer.cs">
+      <DependentUpon>201706041306347_PowiazanieNewsZComent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706051653120_Comment.cs" />
+    <Compile Include="Migrations\201706051653120_Comment.Designer.cs">
+      <DependentUpon>201706051653120_Comment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\Coment.cs" />
+    <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\News.cs" />
     <Compile Include="Models\Player.cs" />
@@ -230,7 +242,7 @@
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Shared\_AddComentPartial.cshtml" />
+    <Content Include="Views\Coment\AddComent.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -239,9 +251,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Prototype\scripts\" />
-    <Folder Include="Views\Coment\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201704142203582_InitialCreate.resx">
@@ -255,6 +265,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705291102483_DodanieComent.resx">
       <DependentUpon>201705291102483_DodanieComent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706041306347_PowiazanieNewsZComent.resx">
+      <DependentUpon>201706041306347_PowiazanieNewsZComent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706051653120_Comment.resx">
+      <DependentUpon>201706051653120_Comment.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

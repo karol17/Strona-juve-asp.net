@@ -17,10 +17,26 @@
     <h1>@Model.Title</h1>
     <p>@Model.Text</p>
    
-    @Html.Partial("_AddComentPartial")
-
+    @using (Html.BeginForm("AddComment", "Comment",new { id=Model.NewsId }))
+    {
+    <div>
+       
+       
+      
+        
+        <div>
+            @Html.LabelFor(m=>m.Comment)
+            
+        </div>
+        <div>
+            @Html.TextBoxFor(m=>m.Comment)
+        </div>
+        <input type="submit" value="Dodaj komentarz" />
+    </div>
+        }
     <article>
-        @foreach (var item in Model.Coments)
+        @if (Model.Comment != null) { 
+        foreach (var item in Model.Comment)
         {
             <div>
                 <div>
@@ -31,6 +47,7 @@
                 </div>
 
             </div>
+            }
         }
     </article>
 
