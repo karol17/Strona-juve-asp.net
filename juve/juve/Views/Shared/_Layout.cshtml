@@ -16,7 +16,7 @@
 <body>
 
     <header class="contener floatfix">
-        <h1><a href="index.html">Juventus Turyn</a></h1>
+        <h1><a href="@Url.Action("Index","Home")">Juventus Turyn</a></h1>
         <nav>
             <a href="#" class="switch">MENU</a>
             <ul class="menu">
@@ -36,21 +36,23 @@
         </div>
     </div>
     <div class="contener floatfix">
-        <aside class="table">
+        <aside c>
            <div>
                @Html.Partial("_LoginPartial")
            </div>
             <img src="~/Content/Images/tabela.png" />
+            @*@Html.Partial("_TablePartial")*@
         </aside>
         
             @RenderBody()
-
+            @RenderSection("scripts",required:false)
         
     </div>
-    <script src="../Scripts/jquery-3.1.1.min.js"></script>
+    <script src="~/Scripts/jquery-3.1.1.min.js"></script>
     <script src="~/Scripts/scripts.js"></script>
     <footer>
-        &copy Copyright Karol Mazur @DateTime.Now.Year
+        &copy; Copyright Karol Mazur @DateTime.Now.Year
+        
     </footer>
 </body>
 </html>

@@ -1,7 +1,6 @@
-﻿using System.Web;
-using System.Web.Optimization;
+﻿using System.Web.Optimization;
 
-namespace juve.App_Start
+namespace juve
 {
     public class BundleConfig
     {
@@ -9,7 +8,8 @@ namespace juve.App_Start
         {
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/reset.css",
-                      "~/Content/Style.css"));
+                      "~/Content/Style.css",
+                      "~/Content/bootstrap.css"));
         }
     }
 }

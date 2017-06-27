@@ -11,8 +11,10 @@ namespace juve.Models
     {
         
         public int CommentId { get; set; }
+        [Required(ErrorMessage = "Wprowadź komentarz")]
         public string Text { get; set; }
-        public LoginViewModel User { get; set; }
-        public News news { get; set; }
+        public string Login { get; set; }
+        public int NewsId { get; set; }
+        public virtual News News { get; set; }
     }
 }

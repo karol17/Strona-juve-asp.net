@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using juve.ViewModels;
 
 namespace juve.Controllers
 {
@@ -31,8 +32,18 @@ namespace juve.Controllers
             {
                 return HttpNotFound();
             }
-
-            return View(news);
+            var comments=db.Comment.Where(c => c.NewsId == id).ToList();
+            
+            var vm = new ArticleViewModel()
+            {
+                ArticleTitle = news.Title,
+                ArticleText = news.Text,
+                ArticleHeader = news.Header,
+                ArticleImage = news.Image,
+                NewsId = news.NewsId,
+                Comments = comments
+            };
+            return View(vm);
         }
         public ActionResult StronyStatyczne(string nazwa)
         {

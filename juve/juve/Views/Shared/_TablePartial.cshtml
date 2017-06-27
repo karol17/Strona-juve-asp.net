@@ -1,0 +1,21 @@
+﻿
+@using juve.Models
+@*@model juve.Models.Club*@
+<table>
+    <tr>
+        <th>Nr.</th>
+        <th>Nazwa</th>
+        <th>PKT</th>
+        <th>Bramki zdobyte</th>
+        <th>Bramki stracone</th>
+        <th>Bilans bramek</th>
+    </tr>
+    @foreach(Club item in Model)
+    {
+            <td>@item.Name</td>
+            <td>@item.Points</td>
+            <td>@item.ScoredGoals</td>
+            <td>@item.LostGoals</td>
+            <td>@item.ScoredGoals-@item.LostGoals</td>
+    }
+</table>

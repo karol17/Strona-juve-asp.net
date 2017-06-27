@@ -28,7 +28,7 @@ namespace juve.DAL
         }
         public virtual DbSet<Player> Player { get; set; }
         public virtual DbSet<News> News { get; set; }
-        public DbSet<Comment> Comment { get; set; }
-        
+        public virtual DbSet<Comment> Comment { get; set; }
+        public virtual DbSet<Club> Club { get; set; }
     }
 }

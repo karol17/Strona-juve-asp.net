@@ -1,7 +1,7 @@
-﻿@model juve.Models.News
+﻿@model juve.ViewModels.ArticleViewModel
 @*@model juve.Models.Coment*@
 @{
-    ViewBag.Title = Model.Title;
+    ViewBag.Title = Model.ArticleTitle;
 }
 
 @*<div>
@@ -14,42 +14,50 @@
 
 
     <img src="~/Content/Images/juve-logo.gif" />
-    <h1>@Model.Title</h1>
-    <p>@Model.Text</p>
+    <h1>@Model.ArticleTitle</h1>
+    <p>@Model.ArticleText</p>
    
-    @using (Html.BeginForm("AddComment", "Comment",new { id=Model.NewsId }))
+    @using (Html.BeginForm("AddComment", "Comment"))
     {
-    <div>
-       
-       
-      
-        
         <div>
-            @Html.LabelFor(m=>m.Comment)
-            
-        </div>
-        <div>
-            @Html.TextBoxFor(m=>m.Comment)
-        </div>
-        <input type="submit" value="Dodaj komentarz" />
-    </div>
-        }
-    <article>
-        @if (Model.Comment != null) { 
-        foreach (var item in Model.Comment)
-        {
-            <div>
-                <div>
-                    @item.User.Email
-                </div>
-                <div>
-                    @item.Text
-                </div>
+            @*<div id="login-error">
+                @Html.ValidationMessage("loginerror", "")
+                @Html.ValidationSummary()
+            </div>*@
+            @Html.ValidationSummary()
+            @Html.HiddenFor(m => m.NewsId)
+            @Html.LabelFor(m => m.CommentText)
+            @Html.TextBoxFor(m => m.CommentText)
+            @*@Html.ValidationMessageFor(m => m.CommentText)*@
 
+
+
+
+            <input type="submit" value="Dodaj komentarz"/>
+        </div>
+    }
+    @*@Html.Action("AddComment", "Comment", new { id = Model.NewsId })*@
+    <article>
+       
+        @Html.LabelFor(m => m.Comments)
+        @foreach (var item in Model.Comments)
+        {
+
+            <div>
+                <b>@item.Login</b>: @item.Text
             </div>
-            }
+
+
+
         }
     </article>
 
 
 </section>
+
+@section Scripts
+{
+    <script src="~/Scripts/jquery-3.1.1.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+}

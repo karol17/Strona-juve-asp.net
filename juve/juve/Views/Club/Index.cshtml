@@ -1,0 +1,52 @@
+﻿@model IEnumerable<juve.Models.Club>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+@*@Model.OrderBy(m=>m.Points)*@
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Points)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ScoredGoals)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LostGoals)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Points)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ScoredGoals)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LostGoals)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ClubId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ClubId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ClubId })
+        </td>
+    </tr>
+}
+
+</table>
