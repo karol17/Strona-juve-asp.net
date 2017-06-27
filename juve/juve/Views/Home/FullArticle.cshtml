@@ -38,18 +38,25 @@
     }
     @*@Html.Action("AddComment", "Comment", new { id = Model.NewsId })*@
     <article>
-       
+        <table class="table">
+           
+        
         @Html.LabelFor(m => m.Comments)
         @foreach (var item in Model.Comments)
         {
-
-            <div>
-                <b>@item.Login</b>: @item.Text
-            </div>
-
-
-
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem=>item.Login):
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Text)
+                </td>
+                @*<div>
+                    <b>@item.Login</b>: @item.Text
+                </div>*@
+            </tr>
         }
+        </table>
     </article>
 
 
