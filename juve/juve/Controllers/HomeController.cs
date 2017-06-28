@@ -59,9 +59,28 @@ namespace juve.Controllers
         {
             return View(nazwa);
         }
+
         public ActionResult Squad()
         {
+            //var player = db.Player.ToList();
+          
             return View(db.Player.ToList());
+        }
+
+        [HttpPost]
+        public ActionResult Squad(string nazwiskoZnajdz)
+        {
+            //var player = db.Player.ToList();
+            var players = from p in db.Player
+                select p;
+            if (!String.IsNullOrEmpty(nazwiskoZnajdz))
+            {
+                players = from p in db.Player
+                    where p.LastName.Equals(nazwiskoZnajdz)
+                    || p.FirstName.Equals(nazwiskoZnajdz)
+                    select p;
+            }
+            return View(players.ToList());
         }
         public ActionResult Player(int ?id)
         {

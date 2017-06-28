@@ -4,38 +4,45 @@
 }
 
 <div class="squad-list floatfix">
+    
+    @using (Html.BeginForm())
+    {
+        <div>Nazwisko:</div>
+        <div>@Html.TextBox("NazwiskoZnajdz")</div>
+        <input type="submit" value="Szukaj"/>
+    }
     @*<img src="~/Content/Images/obrazek.jpg" />*@
     <h1>Bramkarze:</h1>
-    @foreach (var item in Model.Where(p=>p.Position==juve.Models.Position.Bramkarz))
+    @foreach (var item in Model.Where(p => p.Position == juve.Models.Position.Bramkarz))
     {
-       
-            @Html.ActionLink(item.FirstName + " " + item.LastName, "Player", new { id = item.PlayerId });
-        
+        <div>
+            @Html.ActionLink(item.FirstName + " " + item.LastName, "Player", new {id = item.PlayerId});
+        </div>
     }
 
     <h1>Obrońcy:</h1>
     @foreach (var item in Model.Where(p => p.Position == juve.Models.Position.Obrońca))
     {
-
-        @Html.ActionLink(item.FirstName + " " + item.LastName, "Player", new { id = item.PlayerId });
-
+        <div>
+            @Html.ActionLink(item.FirstName + " " + item.LastName, "Player", new {id = item.PlayerId});
+        </div>
     }
-    
+
 
     <h1>Pomocnicy:</h1>
     @foreach (var item in Model.Where(p => p.Position == juve.Models.Position.Pomocnik))
     {
-
-        @Html.ActionLink(item.FirstName + " " + item.LastName, "Player", new { id = item.PlayerId });
-
+        <div>
+            @Html.ActionLink(item.FirstName + " " + item.LastName, "Player", new {id = item.PlayerId});
+        </div>
     }
 
     <h1>Napastnicy:</h1>
     @foreach (var item in Model.Where(p => p.Position == juve.Models.Position.Napastnik))
     {
-
-        @Html.ActionLink(item.FirstName + " " + item.LastName, "Player", new { id = item.PlayerId });
-
+        <div>
+            @Html.ActionLink(item.FirstName + " " + item.LastName, "Player", new {id = item.PlayerId});
+        </div>
     }
 
 </div>
