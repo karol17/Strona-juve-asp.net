@@ -1,10 +1,12 @@
 ﻿@model juve.Models.Player
+@using juve.Infrastructure
 @{
     ViewBag.Title = "Player";
 }
 
 <section class="player floatfix">
-    <img src="~/Content/Images/juve-logo.gif" />
+    @*<img src="~/Content/Images/juve-logo.gif" />*@
+    <img src="@Url.ImagePath(Model.Photo)"/>
     <h1>@Model.FirstName @Model.LastName</h1>
     <table>
         <tr>
