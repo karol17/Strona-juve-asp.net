@@ -14,14 +14,13 @@ namespace juve.Controllers
         // GET: Club
         public ActionResult Index()
         {
-            List<Club> clubs = new List<Club>();
-            clubs = db.Club.ToList();
-            var result = from m in clubs
+          
+            var result = from m in db.Club
                          orderby m.Points descending, m.ScoredGoals 
                          select m;
 
-            return View(result);
-            //return PartialView("_TablePartial", result);
+            //return View(result);
+            return PartialView("_TablePartial", result.ToList());
         }
     }
 }

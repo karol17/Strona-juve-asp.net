@@ -68,19 +68,25 @@ namespace juve.Controllers
         }
 
         [HttpPost]
-        public ActionResult Squad(string nazwiskoZnajdz)
+        //TODO
+        public ActionResult Squad(string search=null)
         {
             //var player = db.Player.ToList();
             var players = from p in db.Player
                 select p;
-            if (!String.IsNullOrEmpty(nazwiskoZnajdz))
+            if (search!=null)
             {
-                players = from p in db.Player
-                    where p.LastName.Equals(nazwiskoZnajdz)
-                    || p.FirstName.Equals(nazwiskoZnajdz)
-                    select p;
+                players.Where(p => p.FirstName.Contains(search) || p.LastName.Contains(search) ||
+                                   search == p.FirstName + " " + p.LastName).ToList();
+                    
             }
-            return View(players.ToList());
+            else
+            {
+                players.ToList();
+            }
+            if (Request.IsAjaxRequest())
+                return View(players);
+            return View();
         }
         public ActionResult Player(int ?id)
         {
@@ -94,6 +100,13 @@ namespace juve.Controllers
                 return HttpNotFound();
             }
             return View(player);
+        }
+
+        public ActionResult PlayerSuggestions(string term)
+        {
+            var players = db.Player.Where(p => p.FirstName.Contains(term) || p.LastName.Contains(term))
+                .Take(4).Select(p => new {label = p.FirstName + " " + p.LastName});
+            return Json(players, JsonRequestBehavior.AllowGet);
         }
     }
 }

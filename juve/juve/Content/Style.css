@@ -140,26 +140,26 @@ section.news a:hover{
     margin:0 2% 0 0;
 
 }
-.squad-list{
+#squad-list{
     width:66%;
     display:block;
     float:right;
     text-align:center;
     margin:2%;
 }
-.squad-list img, .player img{
+#squad-list img, .player img{
     float:left;
     margin-left:10px;
     
 }
-.squad-list h1{
+#squad-list h1{
     font-size:2em;
     text-transform:uppercase;
     text-align:left;
     
 }
 
-.squad-list a{
+#squad-list a{
     font-size:1.7em;
     text-decoration:none;
     color:#000;
@@ -167,7 +167,7 @@ section.news a:hover{
 
 
 }
-.squad-list a:hover{
+#squad-list a:hover{
     text-decoration:underline;
 }
 .player h1{

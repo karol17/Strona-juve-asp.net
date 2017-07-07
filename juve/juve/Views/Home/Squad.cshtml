@@ -3,14 +3,19 @@
     ViewBag.Title = "Skład";
 }
 
+<form id="search-form" method="get" data-ajax="true" data-ajax-target="squad-list" data-ajax-update="squad-list">
+    <input id="Szukaj" name="szukaj" data-autocomplete-source="@Url.Action("PlayerSuggestions")" 
+           placeholder="Wprowadź imię lub nazwisko..." style="width:200px"/>
+    <input type="submit" value="Szukaj" />
+</form>
 <div class="squad-list floatfix">
     
-    @using (Html.BeginForm())
+    @*@using (Html.BeginForm())
     {
         <div>Nazwisko:</div>
         <div>@Html.TextBox("NazwiskoZnajdz")</div>
         <input type="submit" value="Szukaj"/>
-    }
+    }*@
     @*<img src="~/Content/Images/obrazek.jpg" />*@
     <h1>Bramkarze:</h1>
     @foreach (var item in Model.Where(p => p.Position == juve.Models.Position.Bramkarz))
@@ -46,3 +51,21 @@
     }
 
 </div>
+<script src="~/Scripts/jquery-3.1.1.js"></script>
+<script src="~/Scripts/jquery-ui-1.12.1.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+
+<script>
+    var setAutoComplete = function() {
+        var $input = $("#Szukaj");
+        var options = {
+            source: $input.attr("data-autocomplete-source"),
+            select: function(event, ui) {
+                $input.val(ui.item.label);
+                var $form = $input.parents("form:first");
+            }
+        };
+        $input.autocomplete(options);
+    };
+    setAutoComplete();
+</script>

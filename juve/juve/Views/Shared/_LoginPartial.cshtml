@@ -2,8 +2,9 @@
 <div >
     @if (Request.IsAuthenticated)
     {
-        using (Html.BeginForm("Logoff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
-        {
+       
+            using (Html.BeginForm("Logoff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+            {
             @Html.AntiForgeryToken()
 
             <div>
@@ -12,7 +13,8 @@
             <div>
                 <a href="javascript:document.getElementById('logoutForm').submit()">Wyloguj</a>
             </div>
-        }
+            }
+        
     }
     else
     {

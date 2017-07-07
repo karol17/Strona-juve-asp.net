@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using System.Web.Mvc.Html
+<!DOCTYPE html>
 <html>
 <head>
     <title>Fc Juventus Turyn</title>
@@ -12,6 +13,7 @@
 
     <link href="~/Content/Style.css" rel="stylesheet" />*@
    @Styles.Render("~/Content/css")
+   @Styles.Render("~/Content/themes/base/css")
 </head>
 <body>
 
@@ -47,15 +49,16 @@
         </aside>
         
             @RenderBody()
-            @RenderSection("scripts",required:false)
+            
         
     </div>
     <script src="~/Scripts/jquery-3.1.1.min.js"></script>
     <script src="~/Scripts/scripts.js"></script>
-    <footer>
-        &copy; Copyright Karol Mazur @DateTime.Now.Year
+<footer>
+    &copy; Copyright Karol Mazur @DateTime.Now.Year
         
-    </footer>
+</footer>
+    @RenderSection("Scripts", required: false)
 </body>
 </html>
 

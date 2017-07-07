@@ -1,0 +1,42 @@
+﻿@model IEnumerable<juve.Models.Player>
+
+<h1>Bramkarze:</h1>
+@foreach (var item in Model.Where(p => p.Position == juve.Models.Position.Bramkarz))
+{
+    <div>
+        @Html.ActionLink(item.FirstName + " " + item.LastName, "Player", new {id = item.PlayerId});
+    </div>
+}
+
+<h1>Obrońcy:</h1>
+@foreach (var item in Model.Where(p => p.Position == juve.Models.Position.Obrońca))
+{
+    <div>
+        @Html.ActionLink(item.FirstName + " " + item.LastName, "Player", new {id = item.PlayerId});
+    </div>
+}
+
+
+<h1>Pomocnicy:</h1>
+@foreach (var item in Model.Where(p => p.Position == juve.Models.Position.Pomocnik))
+{
+    <div>
+        @Html.ActionLink(item.FirstName + " " + item.LastName, "Player", new {id = item.PlayerId});
+    </div>
+}
+
+<h1>Napastnicy:</h1>
+@foreach (var item in Model.Where(p => p.Position == juve.Models.Position.Napastnik))
+{
+    <div>
+        @Html.ActionLink(item.FirstName + " " + item.LastName, "Player", new {id = item.PlayerId});
+    </div>
+}
+
+
+@*@foreach (var item in Model)
+{
+    
+        @Html.ActionLink(item.FirstName + " " + item.LastName, "Player", new { id = item.PlayerId });
+    <br />    
+}*@
