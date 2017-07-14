@@ -1,0 +1,32 @@
+﻿@model juve.Models.Player
+@using juve.Infrastructure
+@{
+    ViewBag.Title = "Player";
+}
+
+<section class="player floatfix">
+    @*<img src="~/Content/Images/juve-logo.gif" />*@
+    <img src="@Url.ImagePath(Model.Photo)" />
+    <h1>@Model.FirstName @Model.LastName</h1>
+    <table>
+        <tr>
+            <td>Numer:</td>
+            <td>@Model.Number</td>
+        </tr>
+        <tr>
+            <td>Pozycja:</td>
+            <td>@Model.Position</td>
+        </tr>
+        <tr>
+            <td>Data urodzenia:</td>
+            <td>@Model.BirthDay.ToLongDateString()</td>
+        </tr>
+        <tr>
+            <td>Bramki:</td>
+            <td>@Model.GoalCount</td>
+        </tr>
+    </table>
+    @Html.ActionLink("Powrót", "Index")
+
+</section>
+

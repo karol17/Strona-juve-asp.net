@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using juve.Migrations;
 
 namespace juve.ViewModels
 {
@@ -42,5 +43,7 @@ namespace juve.ViewModels
             ErrorMessage = "{0} must have at least {2} characters",
             MinimumLength = 6)]
         public string Login { get; set; }
+
+        private UserData userData { get; set; }
     }
 }

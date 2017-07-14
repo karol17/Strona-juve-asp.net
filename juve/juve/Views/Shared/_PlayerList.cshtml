@@ -4,7 +4,7 @@
 @foreach (var item in Model.Where(p => p.Position == juve.Models.Position.Bramkarz))
 {
     <div>
-        @Html.ActionLink(item.FirstName + " " + item.LastName, "Player", new {id = item.PlayerId});
+        @Html.ActionLink(item.FirstName + " " + item.LastName, "PlayerDatails", new {id = item.PlayerId});
     </div>
 }
 
@@ -12,7 +12,7 @@
 @foreach (var item in Model.Where(p => p.Position == juve.Models.Position.Obrońca))
 {
     <div>
-        @Html.ActionLink(item.FirstName + " " + item.LastName, "Player", new {id = item.PlayerId});
+        @Html.ActionLink(item.FirstName + " " + item.LastName, "PlayerDatails", new {id = item.PlayerId});
     </div>
 }
 
@@ -21,7 +21,7 @@
 @foreach (var item in Model.Where(p => p.Position == juve.Models.Position.Pomocnik))
 {
     <div>
-        @Html.ActionLink(item.FirstName + " " + item.LastName, "Player", new {id = item.PlayerId});
+        @Html.ActionLink(item.FirstName + " " + item.LastName, "PlayerDatails", new {id = item.PlayerId});
     </div>
 }
 
@@ -29,7 +29,7 @@
 @foreach (var item in Model.Where(p => p.Position == juve.Models.Position.Napastnik))
 {
     <div>
-        @Html.ActionLink(item.FirstName + " " + item.LastName, "Player", new {id = item.PlayerId});
+        @Html.ActionLink(item.FirstName + " " + item.LastName, "PlayerDatails", new {id = item.PlayerId});
     </div>
 }
 

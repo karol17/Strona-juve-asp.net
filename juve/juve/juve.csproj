@@ -261,6 +261,7 @@
     <Compile Include="Controllers\ClubController.cs" />
     <Compile Include="Controllers\CommentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PlayerController.cs" />
     <Compile Include="DAL\DataContext.cs" />
     <Compile Include="DAL\JuveInitializer.cs" />
@@ -305,16 +306,26 @@
     <Compile Include="Migrations\201706242259111_AtrybutyWalidacyjne.Designer.cs">
       <DependentUpon>201706242259111_AtrybutyWalidacyjne.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201707131858533_UserData.cs" />
+    <Compile Include="Migrations\201707131858533_UserData.Designer.cs">
+      <DependentUpon>201707131858533_UserData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201707131933056_UserData1.cs" />
+    <Compile Include="Migrations\201707131933056_UserData1.Designer.cs">
+      <DependentUpon>201707131933056_UserData1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Club.cs" />
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\News.cs" />
     <Compile Include="Models\Player.cs" />
+    <Compile Include="Models\UserData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\AccountViewModel.cs" />
     <Compile Include="ViewModels\ArticleViewModel.cs" />
+    <Compile Include="ViewModels\ManageViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -336,6 +347,9 @@
     <Content Include="Views\Club\Index.cshtml" />
     <Content Include="Views\Player\Index.cshtml" />
     <Content Include="Views\Shared\_PlayerList.cshtml" />
+    <Content Include="Views\Player\PlayerDatails.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -374,6 +388,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706242259111_AtrybutyWalidacyjne.resx">
       <DependentUpon>201706242259111_AtrybutyWalidacyjne.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707131858533_UserData.resx">
+      <DependentUpon>201707131858533_UserData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707131933056_UserData1.resx">
+      <DependentUpon>201707131933056_UserData1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -86,8 +86,8 @@ namespace juve.Controllers
                         });
                 case SignInStatus.Failure:
                 default:
-                    ModelState.AddModelError("loginerror",
-                        "Nieudana próba logowania.");
+                    ModelState.AddModelError("loginerror","Nieudana próba logowania.");
+                        
                     return View(model);
             }
         }
@@ -110,9 +110,13 @@ namespace juve.Controllers
             if (ModelState.IsValid)
             {
                 var user = new IdentityModels.ApplicationUser
-                { UserName = model.Email, Email = model.Email };
-                var result = await UserManager.
-                    CreateAsync(user, model.Password);
+                {
+                    UserName = model.Email,
+                    Email = model.Email,
+                    UserData = new UserData()
+                };
+                var result = await UserManager.CreateAsync(user, model.Password);
+                   
                 if (result.Succeeded)
                 {
                     await SignInManager.SignInAsync

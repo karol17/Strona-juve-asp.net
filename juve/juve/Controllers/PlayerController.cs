@@ -4,6 +4,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
@@ -41,6 +42,19 @@ namespace juve.Controllers
             var players = db.Player.Where(p => p.FirstName.ToLower().Contains(term) || p.LastName.ToLower().Contains(term))
                 .Take(4).Select(p => new { label = p.FirstName + " " + p.LastName });
             return Json(players, JsonRequestBehavior.AllowGet);
+        }
+        public ActionResult PlayerDatails(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Player player = db.Player.Find(id);
+            if (player == null)
+            {
+                return HttpNotFound();
+            }
+            return View(player);
         }
     }
 }
