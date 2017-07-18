@@ -8,8 +8,8 @@ namespace juve
         {
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/reset.css",
-                      "~/Content/Style.css",
-                      "~/Content/bootstrap.css"));
+                      "~/Content/Style.css"
+                      ));
 
             bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
                 "~/Content/themes/base/core.css",

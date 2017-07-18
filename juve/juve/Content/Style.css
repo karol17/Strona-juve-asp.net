@@ -142,7 +142,7 @@ section.news a:hover{
 }
 #squad-list{
     width:66%;
-    display:block;
+   
     float:right;
     text-align:center;
     margin:2%;
@@ -175,6 +175,11 @@ section.news a:hover{
 }
 .player{
     font-size:1.4em;
+}
+.profile {
+    width: 66%;
+    float: right;
+    margin: 2%;
 }
 footer{
     
@@ -227,6 +232,15 @@ footer{
     }
     .slogan h1, .slogan h2{
         padding:5px 0px;
+    }
+    section.news {
+        width: 96%;
+    }
+    .news, .squad-list, .profile {
+        width: 96%;
+        clear: both;
+        margin: 0;
+        
     }
 }
 
