@@ -8,10 +8,8 @@
     <meta name="keywords" content="Juventus Turyn,piłka nożna,serieA,juve" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-
-
-   @Styles.Render("~/Content/css")
-  
+   @*@Styles.Render("~/Content/css")*@
+  @System.Web.Optimization.Styles.Render("~/Content/css")
 </head>
 <body>
 
@@ -37,11 +35,11 @@
     </div>
     <div class="contener floatfix">
         <aside >
-            <div>
+            <div class="login">
                 @Html.Partial("_LoginPartial")
             </div>
             <div>
-                <img src="~/Content/Images/tabela.png" />
+                <img src="~/Content/Images/tabela.png" alt="tabela" />
             </div>
             
         </aside>
@@ -53,7 +51,7 @@
     <script src="~/Scripts/jquery-3.1.1.min.js"></script>
     <script src="~/Scripts/scripts.js"></script>
 <footer>
-    &copy; Copyright Karol Mazur @DateTime.Now.Year
+    &copy; Copyright Karol Mazur 2017
         
 </footer>
     @RenderSection("Scripts", required: false)

@@ -14,6 +14,7 @@ namespace juve.Models
         [Required(ErrorMessage = "Wprowadź komentarz")]
         public string Text { get; set; }
         public string Login { get; set; }
+        public DateTime Date { get; set; }
         public int NewsId { get; set; }
         public virtual News News { get; set; }
     }

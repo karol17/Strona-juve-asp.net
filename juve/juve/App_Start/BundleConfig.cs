@@ -7,8 +7,10 @@ namespace juve
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new StyleBundle("~/Content/css").Include(
+                       
                       "~/Content/reset.css",
-                      "~/Content/Style.css"
+                      "~/Content/Style.css",
+                      "~/Content/bootstrap.css"
                       ));
 
             bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
@@ -20,8 +22,7 @@ namespace juve
                ));
             bundles.Add(new ScriptBundle("~/bundles/jqueryAndJqueryUI").Include(
                 "~/Scripts/jquery-{version}.js",
-                "~/Scripts/jquery-ui-{version}.js",
-                "~/Scripts/jquery.unobtrusive-ajax.js"
+                "~/Scripts/jquery-ui-{version}.js"
 
                 ));
         }

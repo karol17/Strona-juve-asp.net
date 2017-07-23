@@ -22,16 +22,7 @@ namespace juve.Controllers
             ChangePasswordSuccess,
             Error
         }
-        //public enum ManageMessageId
-        //{
-        //    AddPhoneSuccess,
-        //    ChangePasswordSuccess,
-        //    SetTwoFactorSuccess,
-        //    SetPasswordSuccess,
-        //    RemoveLoginSuccess,
-        //    RemovePhoneSuccess,
-        //    Error
-        //}
+
         private ApplicationUserManager _userManager;
         private ApplicationSignInManager _signInManager;
         public ManageController()
@@ -98,29 +89,7 @@ namespace juve.Controllers
             };
             return View(model);
         }
-        //public async Task<ActionResult> Index(ManageMessageId? message)
-        //{
-        //    ViewBag.StatusMessage =
-        //        message == ManageMessageId.ChangePasswordSuccess ? "Zmieniono hasło."
-        //            : message == ManageMessageId.SetPasswordSuccess ? "Ustawiono hasło."
-        //                //: message == ManageMessageId.SetTwoFactorSuccess ? "Ustawiono dostawcę uwierzytelniania dwuetapowego."
-        //                //    : message == ManageMessageId.Error ? "Wystąpił błąd."
-        //                //        : message == ManageMessageId.AddPhoneSuccess ? "Dodano numer telefonu."
-        //                //            : message == ManageMessageId.RemovePhoneSuccess ? "Usunięto numer telefonu."
-        //                                : "";
-
-        //    var userId = User.Identity.GetUserId();
-        //    var model = new ChangePasswordViewModel
-        //    {
-
-        //        HasPassword = HasPassword(),
-        //        PhoneNumber = await UserManager.GetPhoneNumberAsync(userId),
-        //        TwoFactor = await UserManager.GetTwoFactorEnabledAsync(userId),
-        //        Logins = await UserManager.GetLoginsAsync(userId),
-        //        BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId)
-        //    };
-        //    return View(model);
-        //}
+       
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> ChangeProfile([Bind(Prefix = "UserData")] UserData userData)
@@ -179,29 +148,7 @@ namespace juve.Controllers
             }
         }
      
-        ////
-        //// POST: /Manage/ChangePassword
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public async Task<ActionResult> ChangePassword(ChangePasswordViewModel model)
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return View(model);
-        //    }
-        //    var result = await UserManager.ChangePasswordAsync(User.Identity.GetUserId(), model.OldPassword, model.NewPassword);
-        //    if (result.Succeeded)
-        //    {
-        //        var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
-        //        if (user != null)
-        //        {
-        //            await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
-        //        }
-        //        return RedirectToAction("Index", new { Message = ManageMessageId.ChangePasswordSuccess });
-        //    }
-        //    AddErrors(result);
-        //    return View(model);
-        //}
+       
 
 
         private async Task SignInAsync(ApplicationUser user, bool isPersistent)

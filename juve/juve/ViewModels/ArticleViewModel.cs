@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Data;
 using System.Linq;
 using System.Web;
 using juve.Models;
@@ -17,6 +18,7 @@ namespace juve.ViewModels
         [Display(Name = "Nowy komentarz:")]
         [Required(ErrorMessage = "Wprowadź komentarz")]
         public string CommentText { get; set; }
+        public DateTime CommentDate { get; set; }
         [Display(Name = "Komentarze:")]
         public ICollection<Comment> Comments { get; set; }
 

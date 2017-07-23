@@ -9,14 +9,14 @@ namespace juve.ViewModels
 {
     public class LoginViewModel
     {
-        [Required(ErrorMessage = "Enter your email.")]
+        [Required(ErrorMessage = "Wprowadź email.")]
         [EmailAddress]
         public string Email { get; set; }
-        [Required(ErrorMessage = "Enter your password.")]
+        [Required(ErrorMessage = "Wprowadź hasło.")]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "Hasło")]
         public string Password { get; set; }
-        [Display(Name = "Remember me")]
+        [Display(Name = "Zapamiętaj mnie")]
         public bool RememberMe { get; set; }
     }
     public class RegisterViewModel
@@ -27,23 +27,20 @@ namespace juve.ViewModels
         public string Email { get; set; }
         [Required]
         [StringLength(30,
-            ErrorMessage = "{0} must have at least {2} characters",
+            ErrorMessage = "{0} musi mieć conajmniej {2} znaków",
             MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "Hasło")]
         public string Password { get; set; }
         [Required]
-        [Display(Name = "Confirm password")]
-        [Compare("Password",
-            ErrorMessage = "Passwords are not the same.")]
+        [Display(Name = "Potwierdź hasło")]
+        [Compare("Password", ErrorMessage = "Hasła nie są takie same")]  
         public string ConfirmPassword { get; set; }
         [Required]
         [DataType(DataType.Text)]
-        [StringLength(30,
-            ErrorMessage = "{0} must have at least {2} characters",
-            MinimumLength = 6)]
+        [StringLength(30, ErrorMessage = "{0} musi mieć conajmniej {2} zanków",MinimumLength = 6)]    
         public string Login { get; set; }
 
-        private UserData userData { get; set; }
+        //private UserData userData { get; set; }
     }
 }

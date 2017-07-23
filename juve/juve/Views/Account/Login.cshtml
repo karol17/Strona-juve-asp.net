@@ -1,10 +1,14 @@
 ﻿@model juve.ViewModels.LoginViewModel
 @{
-    ViewBag.Title = "Login";
+    ViewBag.Title = "Logowanie";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h2>Login</h2>
+<style type="text/css">
+    .login-validation-message {
+        color: #ff0000
+    }
+</style>
+<h2>Logowanie</h2>
 @using (@Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post))
 {
     @Html.AntiForgeryToken()

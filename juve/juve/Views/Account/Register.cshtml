@@ -1,23 +1,18 @@
 ﻿@model juve.ViewModels.RegisterViewModel
 @{
-    ViewBag.Title = "Register";
+    ViewBag.Title = "Rejestracja";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<style type="text/css">.login-validation-message { color:#ff0000}</style>
 
-<h2>Register</h2>
-@*@section SectionTitle
-    {
-        Rejestracja
-    }*@
+<h2>Rejestracja</h2>
+
 
 @using (@Html.BeginForm("Register", "Account"))
 {
     @Html.AntiForgeryToken()
 
-    <div id="login-error">
-        @Html.ValidationMessage("loginerror", "")
-        @Html.ValidationSummary()
-    </div>
+   
 
         <table id="login-table" style="margin-left: auto; margin-right: auto;">
             <tr>
@@ -47,6 +42,7 @@
                     @Html.PasswordFor(o => o.Password)
                     <div class="login-validation-message">
                         @Html.ValidationMessageFor(o => o.Password)
+                        
                     </div>
                 </td>
                 <td></td>
@@ -66,7 +62,7 @@
             <tr>
                 <td></td>
                 <td colspan="2" style="text-align: right; padding-right: 20px;">
-                    <input type="submit" value="Zarejestruj" class="submitLink" style="height: 40px; text-align: right; margin: 0px; padding: 0px;" />
+                    <input type="submit" value="Zarejestruj"  style="height: 40px; text-align: right; margin: 0px; padding: 0px;" />
                 </td>
             </tr>
         </table>

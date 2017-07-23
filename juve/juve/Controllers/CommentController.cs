@@ -33,7 +33,8 @@ namespace juve.Controllers
             {
                 Text = vm.CommentText,
                 NewsId = vm.NewsId,
-                Login = User.Identity.GetUserName()
+                Login = User.Identity.GetUserName(),
+                Date = DateTime.Now
             };
             db.Comment.Add(comment);
             db.SaveChanges();

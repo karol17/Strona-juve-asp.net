@@ -258,7 +258,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\ClubController.cs" />
     <Compile Include="Controllers\CommentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -314,8 +313,15 @@
     <Compile Include="Migrations\201707131933056_UserData1.Designer.cs">
       <DependentUpon>201707131933056_UserData1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201707201837535_UsuniecieClub.cs" />
+    <Compile Include="Migrations\201707201837535_UsuniecieClub.Designer.cs">
+      <DependentUpon>201707201837535_UsuniecieClub.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201707211537352_DodanieDatyKomentarza.cs" />
+    <Compile Include="Migrations\201707211537352_DodanieDatyKomentarza.Designer.cs">
+      <DependentUpon>201707211537352_DodanieDatyKomentarza.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\Club.cs" />
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\News.cs" />
@@ -334,8 +340,6 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\FullArticle.cshtml" />
-    <Content Include="Views\Home\Squad.cshtml" />
-    <Content Include="Views\Home\Player.cshtml" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.1.min.map" />
     <Content Include="Views\Home\Historia.cshtml" />
@@ -343,13 +347,10 @@
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Shared\_TablePartial.cshtml" />
-    <Content Include="Views\Club\Index.cshtml" />
     <Content Include="Views\Player\Index.cshtml" />
-    <Content Include="Views\Shared\_PlayerList.cshtml" />
+    <Content Include="Views\Player\_PlayerList.cshtml" />
     <Content Include="Views\Player\PlayerDatails.cshtml" />
     <Content Include="Views\Manage\Index.cshtml" />
-    <Content Include="Views\Manage\ChangePassword.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -394,6 +395,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201707131933056_UserData1.resx">
       <DependentUpon>201707131933056_UserData1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707201837535_UsuniecieClub.resx">
+      <DependentUpon>201707201837535_UsuniecieClub.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707211537352_DodanieDatyKomentarza.resx">
+      <DependentUpon>201707211537352_DodanieDatyKomentarza.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
