@@ -1,5 +1,6 @@
 ﻿using juve.App_Start;
 using juve.Models;
+using juve.ViewModels;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
@@ -14,13 +15,19 @@ namespace juve.Controllers
 {
     public class AccountController : Controller
     {
-        private ApplicationSignInManager _signInManager;
+        // GET: Account1
         private ApplicationUserManager _userManager;
+        private ApplicationSignInManager _signInManager;
+        public ActionResult AccountPage(string name)
+        {
+            return View(name);
+        }
         public ApplicationUserManager UserManager
         {
             get
             {
-                return _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+                return _userManager ?? HttpContext.GetOwinContext()
+                    .GetUserManager<ApplicationUserManager>();
             }
             private set
             {
@@ -31,7 +38,9 @@ namespace juve.Controllers
         {
             get
             {
-                return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
+                return _signInManager ??
+                     HttpContext.GetOwinContext()
+                    .Get<ApplicationSignInManager>();
             }
             private set
             {
@@ -45,40 +54,78 @@ namespace juve.Controllers
                 return HttpContext.GetOwinContext().Authentication;
             }
         }
-        //
-        // GET: /Account/Register
-        
+        // GET: Account
+        public ActionResult Login(string returnUrl)
+        {
+            ViewBag.ReturnUrl = returnUrl;
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+            var result = await SignInManager.PasswordSignInAsync
+                (model.Email, model.Password, model.RememberMe,
+                shouldLockout: false);
+            switch (result)
+            {
+                case SignInStatus.Success:
+                    return RedirectToLocal(returnUrl);
+                case SignInStatus.LockedOut:
+                    return View("Lockout");
+                case SignInStatus.RequiresVerification:
+                    return RedirectToAction("SendCode",
+                        new
+                        {
+                            ReturnUrl = returnUrl,
+                            RememberMe = model.RememberMe
+                        });
+                case SignInStatus.Failure:
+                default:
+                    ModelState.AddModelError("loginerror","Nieudana próba logowania.");
+                        
+                    return View(model);
+            }
+        }
+        private ActionResult RedirectToLocal(string returnUrl)
+        {
+            if (Url.IsLocalUrl(returnUrl))
+            {
+                return Redirect(returnUrl);
+            }
+            return RedirectToAction("Index", "Home");
+        }
         public ActionResult Register()
         {
             return View();
         }
-
-        //
-        // POST: /Account/Register
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, DaneUzytkownika=new DaneUzytkownika() };
+                var user = new IdentityModels.ApplicationUser
+                {
+                    UserName = model.Email,
+                    Email = model.Email,
+                    UserData = new UserData()
+                };
                 var result = await UserManager.CreateAsync(user, model.Password);
+                   
                 if (result.Succeeded)
                 {
-                    await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
-
-                    // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
-                    // Send an email with this link
-                    // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
-                    // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                    // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
-
+                    await SignInManager.SignInAsync
+                        (user, isPersistent: false,
+                        rememberBrowser: false);
                     return RedirectToAction("Index", "Home");
                 }
                 AddErrors(result);
             }
-
-            // If we got this far, something failed, redisplay form
             return View(model);
         }
         private void AddErrors(IdentityResult result)
@@ -88,13 +135,14 @@ namespace juve.Controllers
                 ModelState.AddModelError("", error);
             }
         }
-        // POST: /Account/LogOff
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult LogOff()
         {
+            var name = User.Identity.Name;
             AuthenticationManager.SignOut();
-            return RedirectToAction("Index", "Home"); 
+            return RedirectToAction("Index", "Home");
         }
+
     }
 }

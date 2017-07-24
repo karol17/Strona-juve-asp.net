@@ -140,34 +140,34 @@ section.news a:hover{
     margin:0 2% 0 0;
 
 }
-.squad-list{
+#squad-list{
     width:66%;
+   
     float:right;
     text-align:center;
     margin:2%;
 }
-.squad-list img, .player img{
+#squad-list img, .player img{
     float:left;
     margin-left:10px;
     
 }
-.squad-list h1{
+#squad-list h1{
     font-size:2em;
     text-transform:uppercase;
     text-align:left;
     
 }
 
-.squad-list a{
+#squad-list a{
     font-size:1.7em;
     text-decoration:none;
-    text-align:center;
     color:#000;
     
 
 
 }
-.squad-list a:hover{
+#squad-list a:hover{
     text-decoration:underline;
 }
 .player h1{
@@ -176,6 +176,12 @@ section.news a:hover{
 .player{
     font-size:1.4em;
 }
+.profile {
+    width: 66%;
+    float: right;
+    margin: 2%;
+}
+
 footer{
     
     background-color:#000;
@@ -227,6 +233,15 @@ footer{
     }
     .slogan h1, .slogan h2{
         padding:5px 0px;
+    }
+    section.news {
+        width: 96%;
+    }
+    .news, .squad-list, .profile {
+        width: 96%;
+        clear: both;
+        margin: 0;
+        
     }
 }
 

@@ -8,17 +8,27 @@ using System.Web;
 
 namespace juve.DAL
 {
-    public class DataContext:IdentityDbContext<ApplicationUser>
+    public class DataContext: IdentityDbContext<IdentityModels.ApplicationUser>
     {
-       
-        
+       public DataContext():base("DataContext")
+        {
+            
+        }
+        //static DataContext()
+        //{
+        //    Database.SetInitializer<DataContext>(new JuveInitializer());
+        //}    
         public static DataContext Create()
         {
             return new DataContext();
         }
-        public DbSet<Player> Player { get; set; }
-        public DbSet<News> News { get; set; }
-        public DbSet<Coment> Coment { get; set; }
-      
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+        }
+        public virtual DbSet<Player> Player { get; set; }
+        public virtual DbSet<News> News { get; set; }
+        public virtual DbSet<Comment> Comment { get; set; }
+        
     }
 }

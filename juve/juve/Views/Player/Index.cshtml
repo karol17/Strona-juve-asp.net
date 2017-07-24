@@ -1,0 +1,130 @@
+﻿@model IEnumerable<juve.Models.Player> 
+@Styles.Render("~/Content/themes/base/css")
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+
+
+<form style="margin-top:20px"id="search-form" method="get" data-ajax="true" data-ajax-target="#squad-list" data-ajax-update="#squad-list">
+    <input id="search-filter" type="search" name="searchQuery" data-autocomplete-source="@Url.Action("PlayerSuggestions")"
+           placeholder="Wprowadź tekst..."/>
+    <input type="submit" value="Szukaj"/>
+</form>
+
+
+    @Html.Partial("_PlayerList")
+
+
+@section Scripts
+{
+    @System.Web.Optimization.Scripts.Render("~/bundles/jqueryAndJqueryUI")
+
+    <script>
+        $(function () {
+
+            var setupAutoComplete = function () {
+                var $input = $(this);
+
+                var options =
+                {
+                    source: $input.attr("data-autocomplete-source"),
+                    select: function (event, ui) {
+                        $input = $(this);
+                        $input.val(ui.item.label);
+                        var $form = $input.parents("form:first");
+                        $form.submit();
+                    }
+                };
+
+                $input.autocomplete(options);
+            };
+
+            var ajaxSubmit = function () {
+
+                var $form = $(this);
+
+                var settings = {
+                    data: $(this).serialize(),
+                    url: $(this).attr("action"),
+                    type: $(this).attr("method")
+                };
+
+                $.ajax(settings).done(function (result) {
+                    var $targetElement = $($form.data("ajax-target"));
+                    var $newContent = $(result);
+                    $($targetElement).replaceWith($newContent);
+                    $newContent.effect("slide");
+                });
+
+                return false;
+            };
+
+            $("#search-filter").each(setupAutoComplete);
+            $("#search-form").submit(ajaxSubmit);
+        });
+    </script>
+}
+@*@section Scripts{
+    @System.Web.Optimization.Scripts.Render("~/bundles/jqueryAndJqueryUI")
+@*Scripts.Render("~/bundles/jqueryAndJqueryUI")
+    <script src="~/Scripts/jquery-3.1.1.js"></script>
+        <script src="~/Scripts/jquery-ui-1.12.1.js"></script>
+        <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+        <script>
+            var setupAutoComplete = function() {
+                var $input = $("search-filter");
+                var options = {
+                    source: $input.attr("data-autocomplete-source"),
+                    select: function(event, ui) {
+                        $input.val(ui.item.label);
+                        var $form = $input.parents("form:first");
+                        $form.submit();
+                    }
+                };
+                $input.autocomplete(options);
+            };
+            setupAutoComplete();
+
+    <script>
+
+
+        $(function() {
+            var setupAutoComplete = function() {
+                var $input = $(this);
+                var options = {
+                    source: $input.attr("data-autocomplete-source"),
+                    select: function(event, ui) {
+                        $input = $(this);
+                        $input.val(ui.item.label);
+                        var $form = $input.parents("form:first");
+                        $form.submit();
+                    }
+                };
+                $input.autocomplete(options);
+            };
+         
+            var ajaxSubmit = function() {
+                var $form = $(this);
+                var settings = {
+                    data: $(this).serialize(),
+                    url: $(this).attr("action"),
+                    type: $(this).attr("method")
+                };
+                $.ajax(settings).done(function(result) {
+                    var $targetElement = $($form.data("ajax-target"));
+                    var $newContent = $(result);
+                    $($targetElement).replaceWith($newContent);
+                    $newContent.effect("slide");
+                });
+                return false;
+            };
+            $("search-filter").each(setupAutoComplete);
+            $("search-form").submit(ajaxSubmit);
+        });
+
+
+    </script>
+}*@

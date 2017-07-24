@@ -1,24 +1,28 @@
-﻿@model IEnumerable<juve.Models.News>
+﻿@model PagedList.IPagedList<juve.Models.News>
+@using PagedList.Mvc
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 @{
     ViewBag.Title = "Juventus Turyn";
 }
 
-<section class="news  ">
+<section class="news ">
     @foreach (var item in Model)
     {
 
 
 
-        <articel>
+        <article>
             <img src="~/Content/Images/juve-logo.gif" />
             <h1>@item.Title</h1>
             <p>
                 @item.Header
                 <span>@Html.ActionLink("Więcej", "FullArticle", new { id = item.NewsId })</span>
             </p>
-        </articel>
+        </article>
 
     }
+    Strona @(Model.PageCount<Model.PageNumber?0:Model.PageNumber) z @Model.PageCount
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page}))
 </section>
 
 

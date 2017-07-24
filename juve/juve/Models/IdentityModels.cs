@@ -9,16 +9,23 @@ using System.Web;
 
 namespace juve.Models
 {
-    public class ApplicationUser : IdentityUser
+    public class IdentityModels
     {
-        public virtual ICollection<Coment> Coments { get; set; }
-        public DaneUzytkownika DaneUzytkownika { get; set; }
-        public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
+        public class ApplicationUser : IdentityUser
         {
-            // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
-            var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
-            // Add custom user claims here
-            return userIdentity;
+            public UserData UserData { get; set; }
+
+            public async Task<ClaimsIdentity>GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
+            {
+                    var userIdentity
+                        = await manager.CreateIdentityAsync
+                        (this, DefaultAuthenticationTypes
+                        .ApplicationCookie);
+                    return userIdentity;
+            }  
+                 
+            
+            
         }
     }
 }
