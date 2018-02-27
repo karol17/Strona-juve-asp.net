@@ -25,6 +25,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -176,6 +177,7 @@
     <Content Include="Content\Images\dybala.jpg" />
     <Content Include="Content\Images\higuain.jpg" />
     <Content Include="Content\Images\juve-logo.gif" />
+    <Content Include="Content\Images\juventus.jpg" />
     <Content Include="Content\Images\khedira.jpg" />
     <Content Include="Content\Images\lemina.jpg" />
     <Content Include="Content\Images\lichtsteiner.jpg" />

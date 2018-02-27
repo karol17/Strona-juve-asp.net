@@ -9,15 +9,15 @@
 
 <section class="news floatfix">
 
+    <img src="~/Content/Images/juventus.jpg" />
 
-
-    <img src="~/Content/Images/juve-logo.gif" alt="logo" />
+    
     <h1>@Model.ArticleTitle</h1>
     <p>
         @Model.ArticleText
         @Html.ActionLink("Powrót", "Index")
     </p>
-    
+    <div style="margin-top:60px"></div>
    @if (User.Identity.IsAuthenticated)
    {
        using (Html.BeginForm("AddComment", "Comment"))
@@ -49,7 +49,7 @@
        </p>
    }
    
-    <article >
+    <article id="comment" >
 
         <p>@Html.LabelFor(m => m.Comments)</p>
         <div>
