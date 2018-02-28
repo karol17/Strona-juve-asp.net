@@ -113,16 +113,59 @@ aside {
     margin: 2%;
     font-size: 250%;
 }
-
-.login a {
-    color: #000;
-    text-decoration: none;
+aside img{
+    max-width:300px;
 }
-
-    .login a:hover {
-        text-decoration: underline;
+.login{
+    margin-bottom:20px;
+}
+.login div{
+    margin:5px 0;
+}
+    .login a {
+        /*color: #000;
+        text-decoration: none;*/
+        display: block;
+        height: 40px;
+        line-height: 40px;
+        font-size: 1em;
+        color: #fff;
+        
+        text-align: center;
+        text-decoration: none;
+        background:#000;
+        /*border:2px solid #fff;*/
+        border-radius:10px;
     }
 
+    .login a:hover {
+        /*text-decoration: underline;*/
+        
+        background:#111;
+    }
+.register{
+    margin-top:20px;
+    font-size:1.4em;
+
+
+}
+.register h2{
+    font-size:2em;
+}
+#login-table td{
+    padding-top:10px;
+}
+#login-table input[type=submit] {
+    background-color:#000;
+    color:#fff;
+    border-radius:10px;
+    height:40px;
+    width:100px;
+    text-align:center;
+}
+#login-table input[type=submit]:hover{
+    background-color:#111;
+}
 section.news {
     width: 66%;
     float: right;
@@ -193,8 +236,14 @@ section.news {
 }
 
 .player {
-    font-size: 1.4em;
+    font-size: 2em;
     margin: 20px 0;
+}
+.player table{
+    margin-top:20px;
+}
+.player td{
+    margin-top:10px;
 }
 
 .profile {

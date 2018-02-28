@@ -8,14 +8,17 @@
         color: #ff0000
     }
 </style>
-<h2>Logowanie</h2>
-@using (@Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post))
-{
-    @Html.AntiForgeryToken()
+<div class="register">
 
-    <div id="login-error">
-        @Html.ValidationMessage("loginerror", "")
-    </div>
+
+    <h2>Logowanie</h2>
+    @using (@Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+        <div id="login-error">
+            @Html.ValidationMessage("loginerror", "")
+        </div>
 
         <table id="login-table" style="margin-left: auto; margin-right: auto;">
             <tr>
@@ -28,7 +31,7 @@
                 </td>
             </tr>
             <tr>
-                <td>@Html.LabelFor(o => o.Password, "Hasło")</td>
+                <td>@Html.LabelFor(o => o.Password, "Hasło:")</td>
                 <td>
                     @Html.PasswordFor(o => o.Password)
                     <div class="login-validation-message">
@@ -47,5 +50,5 @@
                 </td>
             </tr>
         </table>
-}
-
+    }
+</div>

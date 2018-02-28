@@ -165,6 +165,8 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\669560.png" />
+    <Content Include="Content\Images\78622150642648459ca3e74b5b96_c.jpg" />
     <Content Include="Content\Images\alex-sandro.jpg" />
     <Content Include="Content\Images\asamoah.jpg" />
     <Content Include="Content\Images\banner.jpg" />
@@ -177,13 +179,16 @@
     <Content Include="Content\Images\dybala.jpg" />
     <Content Include="Content\Images\higuain.jpg" />
     <Content Include="Content\Images\juve-logo.gif" />
+    <Content Include="Content\Images\juventus-players-netflix-inline.jpg" />
     <Content Include="Content\Images\juventus.jpg" />
+    <Content Include="Content\Images\Juventus_FC_2017_logo.png" />
     <Content Include="Content\Images\khedira.jpg" />
     <Content Include="Content\Images\lemina.jpg" />
     <Content Include="Content\Images\lichtsteiner.jpg" />
     <Content Include="Content\Images\mandzukic.jpg" />
     <Content Include="Content\Images\marchisio.jpg" />
     <Content Include="Content\Images\neto.jpg" />
+    <Content Include="Content\Images\obraz.jpg" />
     <Content Include="Content\Images\obrazek.jpg" />
     <Content Include="Content\Images\pjaca.jpg" />
     <Content Include="Content\Images\pjanic.jpg" />
@@ -192,6 +197,7 @@
     <Content Include="Content\Images\slogan-bg.jpg" />
     <Content Include="Content\Images\slogan-bg1.jpg" />
     <Content Include="Content\Images\slogan-bg2.jpg" />
+    <Content Include="Content\Images\szczesny.png" />
     <Content Include="Content\Images\tabela.png" />
     <Content Include="Content\PagedList.css" />
     <Content Include="Content\Site.css" />

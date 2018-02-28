@@ -4,15 +4,15 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <style type="text/css">.login-validation-message { color:#ff0000}</style>
+<div class="register">
+    <h2>Rejestracja</h2>
 
-<h2>Rejestracja</h2>
+
+    @using (@Html.BeginForm("Register", "Account"))
+    {
+        @Html.AntiForgeryToken()
 
 
-@using (@Html.BeginForm("Register", "Account"))
-{
-    @Html.AntiForgeryToken()
-
-   
 
         <table id="login-table" style="margin-left: auto; margin-right: auto;">
             <tr>
@@ -37,21 +37,21 @@
                 <td></td>
             </tr>
             <tr>
-                <td>@Html.LabelFor(o => o.Password, "Hasło")</td>
+                <td>@Html.LabelFor(o => o.Password, "Hasło:")</td>
                 <td>
                     @Html.PasswordFor(o => o.Password)
                     <div class="login-validation-message">
                         @Html.ValidationMessageFor(o => o.Password)
-                        
+
                     </div>
                 </td>
                 <td></td>
             </tr>
             <tr>
-                <td style="padding: 0px 20px 0px 0px; text-align: left;">
+                <td >
                     @Html.LabelFor(o => o.ConfirmPassword, "Potwierdź hasło:")
                 </td>
-                <td style="padding: 0px; text-align: left;">
+                <td >
                     @Html.PasswordFor(o => o.ConfirmPassword)
                     <div class="login-validation-message">
                         @Html.ValidationMessageFor(o => o.ConfirmPassword)
@@ -62,12 +62,12 @@
             <tr>
                 <td></td>
                 <td colspan="2" style="text-align: right; padding-right: 20px;">
-                    <input type="submit" value="Zarejestruj"  style="height: 40px; text-align: right; margin: 0px; padding: 0px;" />
+                    <input type="submit" value="Zarejestruj" />
                 </td>
             </tr>
         </table>
-}
-
+    }
+</div>
 @section Scripts
     {
         <script src="~/Scripts/jquery-3.1.1.js"></script>
