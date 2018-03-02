@@ -5,58 +5,85 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div class="profile">
-    
+
     <h2 style="margin-bottom:30px">Twoje dane</h2>
 
     @using (@Html.BeginForm("ChangeProfile", "Manage"))
     {
         @Html.AntiForgeryToken()
-        <div style="text-align: center;">
-            <table>
+        
+            <table class="login-table" style="margin-left: auto; margin-right: auto;">
                 <tr>
                     <td>@Html.LabelFor(m => m.UserData.FirstName, "Imię:")</td>
-                    <td>@Html.TextBoxFor(m => m.UserData.FirstName)</td>
-                    <td>@Html.ValidationMessageFor(m => m.UserData.FirstName)</td>
-                </tr>
-                <tr>
-                    <td>@Html.LabelFor(m => m.UserData.LastName, "Nazwisko:")</td>
-                    <td>@Html.TextBoxFor(m => m.UserData.LastName)</td>
-                    <td>@Html.ValidationMessageFor(m => m.UserData.LastName)</td>
-                </tr>
-                <tr>
-                    <td>@Html.LabelFor(m => m.UserData.Adres, "Adres:")</td>
-                    <td>@Html.TextBoxFor(m => m.UserData.Adres)</td>
-                    <td>@Html.ValidationMessageFor(m => m.UserData.Adres)</td>
-                </tr>
-                <tr>
-                    <td>@Html.LabelFor(m => m.UserData.City, "Miasto:")</td>
-                    <td>@Html.TextBoxFor(m => m.UserData.City)</td>
-                    <td>@Html.ValidationMessageFor(m => m.UserData.City)</td>
-                </tr>
-                <tr>
+                    <td>
+                        @Html.TextBoxFor(m => m.UserData.FirstName)
+                    <div div class="login-validation-message">
+                        @Html.ValidationMessageFor(m => m.UserData.FirstName)
+                    </div>
+                </td>
 
-                    <td>@Html.LabelFor(m => m.UserData.Email, "Email:")</td>
-                    <td>@Html.TextBoxFor(m => m.UserData.Email)</td>
-                    <td>@Html.ValidationMessageFor(m => m.UserData.Email)</td>
-                </tr>
-                <tr>
 
-                    <td>@Html.LabelFor(m => m.UserData.PhoneNumber, "Numer telefonu:")</td>
-                    <td>@Html.TextBoxFor(m => m.UserData.PhoneNumber)</td>
-                    <td>@Html.ValidationMessageFor(m => m.UserData.PhoneNumber)</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(m => m.UserData.LastName, "Nazwisko:")</td>
+                <td>
+                    @Html.TextBoxFor(m => m.UserData.LastName)
+                    <div class="login-validation-message">
+                        @Html.ValidationMessageFor(m => m.UserData.LastName)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(m => m.UserData.Adres, "Adres:")</td>
+                <td>
+                    @Html.TextBoxFor(m => m.UserData.Adres)
+                    <div class="login-validation-message">
+                        @Html.ValidationMessageFor(m => m.UserData.Adres)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(m => m.UserData.City, "Miasto:")</td>
+                <td>
+                    @Html.TextBoxFor(m => m.UserData.City)
+                    <div class="login-validation-message">
+                        @Html.ValidationMessageFor(m => m.UserData.City)
+                    </div>
+                </td>
+    
                 </tr>
-                <tr style="text-align: right;">
-                    <td></td>
-                    <td colspan="3">
-                        <div class="checkbox" style="margin-bottom: 10px;">
-                        </div>
+                    <tr>
 
-                        <input type="submit" value="Potwierdź" style="height: 40px; margin-right: 5px;" />
-                    </td>
-                </tr>
+                        <td>@Html.LabelFor(m => m.UserData.Email, "Email:")</td>
+                        <td>
+                            @Html.TextBoxFor(m => m.UserData.Email)
+                            <div class="login-validation-message">
+                                @Html.ValidationMessageFor(m => m.UserData.Email)
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+
+                        <td>@Html.LabelFor(m => m.UserData.PhoneNumber, "Numer telefonu:")</td>
+                        <td>
+                            @Html.TextBoxFor(m => m.UserData.PhoneNumber)
+                            <div class="login-validation-message">
+                                @Html.ValidationMessageFor(m => m.UserData.PhoneNumber)
+                            </div>
+                        </td>
+                    </tr>
+                    <tr style="text-align: right;">
+                        <td></td>
+                        <td colspan="3">
+                            <div class="checkbox" style="margin-bottom: 10px;">
+                            </div>
+
+                            <input type="submit" value="Potwierdź"  margin-right: 5px;" />
+                        </td>
+                    </tr>
             </table>
 
-        </div>
+               
     }
     <hr />
     <h2 style="margin-bottom: 30px">Zmiana hasła</h2>
@@ -80,46 +107,48 @@
                 }
             </div>
         }
-        <table>
-            <tr>
-                <td>@Html.LabelFor(m => m.ChangePasswordViewModel.OldPassword, "Stare Hasło:")</td>
-                <td>@Html.PasswordFor(m => m.ChangePasswordViewModel.OldPassword)</td>
-                <td>
-                    <div class="login-validation-message">
-                        @Html.ValidationMessageFor(m => m.ChangePasswordViewModel.OldPassword)
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>@Html.LabelFor(m => m.ChangePasswordViewModel.NewPassword, "Stare Hasło:")</td>
-                <td>@Html.PasswordFor(m => m.ChangePasswordViewModel.NewPassword)</td>
-                <td>
-                    <div class="login-validation-message">
-                        @Html.ValidationMessageFor(m => m.ChangePasswordViewModel.NewPassword)
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>@Html.LabelFor(m => m.ChangePasswordViewModel.ConfirmPassword, "Stare Hasło:")</td>
-                <td>@Html.PasswordFor(m => m.ChangePasswordViewModel.ConfirmPassword)</td>
-                <td>
-                    <div class="login-validation-message">
-                        @Html.ValidationMessageFor(m => m.ChangePasswordViewModel.ConfirmPassword)
-                    </div>
-                </td>
-            </tr>
-            <tr style="text-align: right;">
-                <td></td>
-                <td colspan="3">
-                    <div class="checkbox" style="margin-bottom: 10px;">
-                    </div>
+        
+            <table class="login-table" style="margin-left: auto; margin-right: auto;">
+                <tr>
+                    <td>@Html.LabelFor(m => m.ChangePasswordViewModel.OldPassword, "Stare Hasło:")</td>
+                    <td>
+                        @Html.PasswordFor(m => m.ChangePasswordViewModel.OldPassword)
+                        <div class="login-validation-message">
+                            @Html.ValidationMessageFor(m => m.ChangePasswordViewModel.OldPassword)
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(m => m.ChangePasswordViewModel.NewPassword, "Stare Hasło:")</td>
+                    <td>
+                        @Html.PasswordFor(m => m.ChangePasswordViewModel.NewPassword)
+                        <div class="login-validation-message">
+                            @Html.ValidationMessageFor(m => m.ChangePasswordViewModel.NewPassword)
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(m => m.ChangePasswordViewModel.ConfirmPassword, "Stare Hasło:")</td>
+                    <td>
+                        @Html.PasswordFor(m => m.ChangePasswordViewModel.ConfirmPassword)
+                        <div class="login-validation-message">
+                            @Html.ValidationMessageFor(m => m.ChangePasswordViewModel.ConfirmPassword)
+                        </div>
+                    </td>
+                </tr>
+                <tr style="text-align: right;">
+                    <td></td>
+                    <td colspan="3">
+                        <div class="checkbox" style="margin-bottom: 10px;">
+                        </div>
 
-                    <input type="submit" value="Zmień" class="submitLink" style="height: 40px;" />
-                </td>
-            </tr>
-        </table>
-    }
-</div>
+                        <input type="submit" value="Zmień" class="submitLink" style="height: 40px;" />
+                    </td>
+                </tr>
+            </table>
+           
+            }
+        </div>
 @section Scripts{
     
 <script src="~/Scripts/jquery-3.1.1.js"></script>

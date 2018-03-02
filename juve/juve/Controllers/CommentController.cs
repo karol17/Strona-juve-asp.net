@@ -25,6 +25,7 @@ namespace juve.Controllers
         {
             if (!ModelState.IsValid)
             {
+               
                 ModelState.AddModelError("", "Error: Nie dodano komentarza!");
                 return RedirectToAction("FullArticle", "Home", new { id = vm.NewsId });
             }

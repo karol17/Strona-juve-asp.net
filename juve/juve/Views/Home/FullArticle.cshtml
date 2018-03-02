@@ -22,23 +22,26 @@
    {
        using (Html.BeginForm("AddComment", "Comment"))
        {
-           <div>
+           <div >
 
                @Html.ValidationSummary()
                @Html.HiddenFor(m => m.NewsId)
-               <table>
+               <table id="comment-table">
                    <tr>
                        <td colspan="2">@Html.LabelFor(m => m.CommentText)</td>
                    </tr>
                    <tr>
 
-                       <td style="padding-left: 5px">@Html.TextAreaFor(m => m.CommentText, 5, 70, null)</td>
-                       <td style="padding-left: 5px"><input type="submit" value="Dodaj komentarz"/></td>
+                       <td >
+                           @Html.TextAreaFor(m => m.CommentText, 5, 70, null)
+                           <div class="login-validation-message">
+                               @Html.ValidationMessageFor(m => m.CommentText)
+                           </div>
+                       </td>
+                       <td style="padding: 20px"><input type="submit" value="Dodaj komentarz"/></td>
                    </tr>
 
                </table>
-
-         
            </div>
        }
    }

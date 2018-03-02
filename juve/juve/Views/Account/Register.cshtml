@@ -3,8 +3,8 @@
     ViewBag.Title = "Rejestracja";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<style type="text/css">.login-validation-message { color:#ff0000}</style>
-<div class="register">
+
+<div class="profile">
     <h2>Rejestracja</h2>
 
 
@@ -14,7 +14,7 @@
 
 
 
-        <table id="login-table" style="margin-left: auto; margin-right: auto;">
+        <table class="login-table" style="margin-left: auto; margin-right: auto;">
             <tr>
                 <td>@Html.LabelFor(o => o.Email, "E-mail:")</td>
                 <td>
