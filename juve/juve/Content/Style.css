@@ -12,6 +12,7 @@
 }
 
 header h1 {
+    font-size:xx-large;
     float: left;
     width: 35%;
     min-width: 200px;
@@ -20,10 +21,17 @@ header h1 {
     header h1 a {
         display: block;
         width: 200px;
-        height: 60px;
-        margin: 5px 0;
-        text-indent: -999em;
-        background: url('../../Content/Images/banner.jpg') top left no-repeat;
+        height: 70px;
+        
+        padding:0 10px;
+        color:#fff;
+        background-color:#000;
+        text-decoration:none;
+        text-align:center;
+        font-weight:bold;
+        
+        
+        
     }
 
 header nav {
@@ -65,7 +73,7 @@ header nav {
 .slogan-bg {
     height: 442px;
     width: 100%;
-    background: url('../../Content/Images/slogan-bg.jpg') top center no-repeat;
+    background: url('../../Content/Images/fallback-video-poster.jpg') top center no-repeat;
     background-size: cover;
     overflow: hidden;
     border-top: 4px solid #000;
@@ -112,29 +120,29 @@ aside {
     width: 26%;
     float: left;
     margin: 2%;
-    font-size: 250%;
+    font-size: 2em;
 }
 aside img{
-    max-width:300px;
+    max-width:200px;
 }
+
 .login{
     margin-bottom:20px;
 }
 .login div{
     margin:5px 0;
 }
-    .login a {
-        /*color: #000;
-        text-decoration: none;*/
+    .login a {      
         display: block;
         height: 40px;
+        max-width:200px;
         line-height: 40px;
         font-size: 1em;
         color: #fff;
         
         text-align: center;
         text-decoration: none;
-        background:#000;
+        background:#111;
         /*border:2px solid #fff;*/
         border-radius:10px;
     }
@@ -142,9 +150,13 @@ aside img{
     .login a:hover {
         /*text-decoration: underline;*/
         
-        background:#111;
+        background:#222;
     }
 
+#contact{
+    margin:2%;
+    font-size:2em;
+}
 .news {
     width: 66%;
     float: right;
@@ -179,9 +191,7 @@ aside img{
     border: 4px solid #000;
     margin: 0 2% 0 0;
 }
-#comment-table{
 
-}
 #comment label {
     font-weight: 700;
 }
@@ -193,7 +203,7 @@ aside img{
     margin: 2%;
 }
 
-    #squad-list img, .player img {
+   .player img {
         float: left;
         margin-left: 10px;
     }
@@ -280,6 +290,9 @@ footer {
     .slogan {
         padding-top: 150px;
     }
+    .menu{
+        font-size:0.9em;
+    }
 }
 
 
@@ -320,42 +333,41 @@ footer {
     section.news {
         width: 96%;
     }
-
-    .news, .squad-list, .profile {
-        width: 96%;
-        clear: both;
-        margin: 0;
+    aside{
+        width:96%;
     }
 }
 
-/*------------------MAX-WIDTH 480------------------*/
-@media screen and (max-width: 480px) {
-    .contener {
-        width: 100%;
-    }
 
-    header nav ul li {
-        display: block;
-        width: 100%;
-    }
-
-        header nav ul li a {
-            height: 40px;
-            line-height: 40px;
-            border-bottom: 1px solid #000;
+    /*------------------MAX-WIDTH 480------------------*/
+    @media screen and (max-width: 480px) {
+        .contener {
+            width: 100%;
         }
 
-    header nav ul.visible {
-        display: block;
+        header nav ul li {
+            display: block;
+            width: 100%;
+        }
+
+            header nav ul li a {
+                height: 40px;
+                line-height: 40px;
+                border-bottom: 1px solid #000;
+            }
+
+        header nav ul.visible {
+            display: block;
+        }
+
+        .slogan-bg {
+            height: 200px;
+        }
+
+        .slogan {
+            padding-top: 60px;
+            font-size: 2em;
+            line-height: 1.7em;
+        }
     }
 
-    .slogan-bg {
-        height: 200px;
-    }
-
-    .slogan {
-        padding-top: 60px;
-        font-size: 2em;
-        line-height: 1.7em;
-    }
-}

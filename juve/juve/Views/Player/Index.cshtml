@@ -20,8 +20,9 @@
 
 @section Scripts
 {
-    @System.Web.Optimization.Scripts.Render("~/bundles/jqueryAndJqueryUI")
+    @*@System.Web.Optimization.Scripts.Render("~/bundles/jqueryAndJqueryUI")*@
 
+<script src="~/Scripts/jquery-ui-1.12.1.js"></script>
     <script>
         $(function () {
 
@@ -40,6 +41,7 @@
                 };
 
                 $input.autocomplete(options);
+
             };
 
             var ajaxSubmit = function () {
